@@ -12,7 +12,7 @@ const orderRouter = require('./order.router');
 const statisticalRouter = require('./statistical.router');
 const orderProductRouter = require('./orderProduct.router');
 const notfoundRouter = require('./notfound.router');
-const noPermissionRouter = require('./nopermission.router/');
+const noPermissionRouter = require('./nopermission.router//');
 
 function route(app) {
     app.use('/statistical', statisticalRouter);
