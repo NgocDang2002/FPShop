@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100vw;
+    height: 350px;
+}
+
+.div2{
+    width: 100%;
+    height: auto;
+}
+.div2_edit_1{
+    display: flex;
+    height: auto;
+    grid-gap: 2rem;
+}
+
+.div2{
+    display: flex;
+    justify-content: center; /* Căn giữa ngang */
+    align-items: center; /* Căn giữa dọc */
+}
+.div2_edit{
+    width: 80%;
+    height: auto;
+}
+
+.lienhe{
+    width: 50%;
+    height: auto;
+}
+
+.lienhe_edit{
+    width: 100%;
+}
+.custom-button{
+    margin-left: 70px;
+}
+
+.lh1{
+    font-weight: bold;
+}
+
+.lh2 input{
+    height: 25px; width: 450px;
+    margin: 10px;
+}
+
+#noidung{
+    height: 100px;
+}
+
+.lh2{
+    display: block;
+}
+
+.lh2_button button{
+    margin-left: 10px;
+    width: 10rem;
+    height: 3rem;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 1s, color 1s; /* Hiệu ứng chuyển đổi mượt mà */
+
+    /* Khi chuột hover qua nút */
+    &:hover {
+    background-color: #0af030;
+    color: #fff;
+    background-position: left center;
+    }
+}

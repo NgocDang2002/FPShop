@@ -1,0 +1,62 @@
+body {
+    width: 100%;
+    padding: 0px;
+    margin: 0;
+}
+.darkBG {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.3;
+}
+.header-news {
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../images/img1.jpg) no-repeat center;
+    height: 300px;
+    text-transform: uppercase;
+    font-size: 36px;
+    color: #d3b673;
+    letter-spacing: 1.8px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 30px;
+}
+.gioithieu {
+    height: 300px;
+    width: 100%;
+    text-transform: uppercase;
+    font-family: BalooExtra;
+    font-size: 35px;
+    color: #d3b673;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 30px;
+}
+.gioithieu-text {
+    position: absolute;
+    bottom: 30px;
+    font-family: BalooExtra;
+    font-size: 36px;
+    color: #d3b673;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+}
+.gioithieund {
+    font-size: 18px;
+    width: 80%;
+    margin: 0 10%;
+}
+.gioithieudau {
+    font-family: balooextra;
+    font-size: 36px;
+    margin-top: 32px;
+    font-weight: 400;
+}

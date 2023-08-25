@@ -1,0 +1,144 @@
+ *{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+  }
+.box {
+    width: 100%;
+    height: auto;
+    /* float: left; */
+    display:flex;
+    justify-content: space-between;
+}
+.edit_box{
+    /* display:flex; */
+    width: 100%;
+    height: auto;
+    grid-gap: 1rem;
+    
+}
+.GT_A1{
+    width: 100%;
+    height: 30%;
+}
+.text {
+    display:flex;
+    width: 100%;
+    height: auto;
+    grid-gap: 3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text_1 {
+    display:flex;
+    width: 100%;
+    height: auto;
+    grid-gap: 3rem;
+    margin-top: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+} 
+.text_2 {
+    display:flex;
+    width: 100%;
+    height: auto;
+    grid-gap: 3rem;
+    margin-top: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text_3 {
+    display:flex;
+    width:100%;
+    height: auto;
+    grid-gap: 3rem;
+    margin-top: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.text_4 {
+    display:flex;
+    width:100%;
+    height: auto;
+    grid-gap: 3rem;
+    margin-top: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.box_1 {
+    width: 40%;
+    height: 100px;
+    color :#131212fb;
+    background-color: white;
+    margin-top: 3px;
+    /* grid-gap: 3rem; */
+    /* box-sizing: border-box; */
+
+}
+.TC_TT a{
+    color: rgb(93, 85, 75);
+}
+.TC_TT{
+    padding-left: 40%;
+    width: 1000px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.BVMN{
+    padding-left: 50px; 
+    margin-left: 300px;
+    width: 250px;
+    height: 800px;
+    border-style: ridge;
+    margin-top: 50px;
+}
+.DMB{
+    width: 250px;
+    height: 40px;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom:solid ;
+}
+
+.DMC_ul {
+    margin-top: 10px;
+  width: 150px;
+  /* border-bottom: dashed 1px;
+  list-style: none; */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 20px;
+  
+}
+.DMC{
+    width:200px ;
+    height:250px ;
+    display: flex;
+    align-items: stretch; 
+}
+.TT_DM{
+    padding-left: 27px; 
+    margin-left: -52px;
+    width: 272px;
+    height: 300px;
+    border-style: ridge;
+    margin-top: 65px;
+    /* border-width:2.5px; */
+}
+.box_3{
+    width:1200px;
+    height:auto;
+    color :#131212fb;
+    background-color: white;
+    box-sizing: border-box;
+    margin-left: 645px;
+    margin-top: -814px;
+}
+.DMC_cah{
+    margin-top: 5px; 
+}

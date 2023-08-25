@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include('../../partials/admin/head.ejs')%>
+    <style>
+      .icon-btn:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+      .xemdonhang:hover {
+        opacity: 0.8;
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <%-include('../../partials/header')%>
+    <div class="user-banner" style="height: 300px; position: relative">
+      <div
+        class="darklayout"
+        style="
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: rgba(0, 0, 0, 0.801);
+          z-index: -1;
+        "
+      ></div>
+      <img
+        style="
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          z-index: -2;
+        "
+        src="/images/myorderbanner.jpeg"
+        alt=""
+      />
+      <h1
+        style="
+          width: 100%;
+          text-align: center;
+          color: var(--topicColor);
+          position: absolute;
+          top: 200px;
+        "
+      >
+        DANH SÁCH NGƯỜI DÙNG
+      </h1>
+    </div>
+    <div
+      style="
+        min-height: 600px;
+        background: url('/images/productsbg.png');
+        padding-top: 20px;
+        padding-bottom: 30px;
+      "
+    >
+      <table
+        style="
+          background: url('/images/productsbg.png');
+          color: var(--topicColor);
+        "
+        class="table table-responsive table-bordered"
+      >
+        <thead>
+          <tr>
+            <th scope="col" style="text-align: center;color: white;">STT</th>
+            <th scope="col" style="color: white;">Tên đăng nhập</th>
+            <th scope="col" style="color: white;">Họ tên</th>
+            <th scope="col" style="color: white;">SĐT</th>
+            <th scope="col" style="color: white;">Email</th>
+            <th scope="col" style="color: white;">Quyền</th>
+            <th scope="col" style="text-align: center;color: white;">Chức năng</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (user of users) { %>
+          <tr id="<%=user.id%>">
+            <th scope="row" style="text-align: center">
+              <%= users.indexOf(user) + 1 %>
+            </th>
+            <td style="color: #fff !important"><%= user.username %></td>
+            <td style="color: #fff !important"><%= user.full_name %></td>
+            <td style="color: #fff !important"><%= user.phone_number %></td>
+            <td style="color: #fff !important"><%= user.email %></td>
+            <td style="color: #fff !important"><%= user.role %></td>
+            <td style="text-align: center">
+              <i
+                class="fa-solid fa-pen icon-btn"
+                title="sửa"
+                style="font-size: 15px"
+                data-bs-toggle="modal"
+                data-bs-target="#userInfo"
+              ></i>
+
+              <%if(user.username==='chi' ||
+              user.username===process.env.ADMIN_USERNAME) {%> <%} else {%>
+              <span style="margin-right: 20px"></span>
+              <i
+                class="fa-solid fa-xmark icon-btn"
+                title="xóa"
+                style="font-size: 18px"
+                onclick="handleDelete('<%=user.id%>', '<%=user.full_name%>')"
+              ></i>
+              <%}%>
+            </td>
+            <td style="text-align: center">
+              <a
+                class="xemdonhang"
+                href="/orders/admin/<%= user.id %>"
+                style="color: var(--topicColor) !important"
+                >Xem đơn hàng <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </td>
+            <% } %>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        class="modal fade"
+        id="userInfo"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+        style="margin-top: 80px; text-align: left"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Thông tin tài khoản
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body" style="color: #000">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>Tên đăng nhập:</td>
+                    <td>
+                      <input
+                        class="username-input"
+                        type="text"
+                        disabled
+                        value="<%=user?.username%>"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Mật khẩu:</td>
+                    <td>
+                      <div
+                        data-bs-toggle="modal"
+                        data-bs-target="#changePassword"
+                        class="reset-pw-btn"
+                      >
+                        Đặt lại mật khẩu
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Họ tên:</td>
+                    <td><input type="text" value="<%=user?.full_name%>" /></td>
+                  </tr>
+                  <tr>
+                    <td>Số điện thoại:</td>
+                    <td>
+                      <input type="text" value="<%=user?.phone_number%>" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Email:</td>
+                    <td><input type="text" value="<%=user?.email%>" /></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn"
+                style="background-color: var(--topicColor); color: #fff"
+                data-bs-dismiss="modal"
+              >
+                Lưu
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%if(users.length===0) {%>
+      <p style="width: 100%; text-align: center; color: rgb(218, 218, 218)">
+        CHƯA CÓ KHÁCH HÀNG NÀO.
+      </p>
+      <%}%>
+    </div>
+    <%-include('../../partials/link_js.ejs')%>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function handleDelete(userId, name) {
+        Swal.fire({
+          title: `Bạn có chắc chắn muốn xóa người dùng ${name}?`,
+          text: 'Hành động này không thể khôi phục!',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Xóa',
+          cancelButtonText: 'Hủy',
+          reverseButtons: true,
+        }).then((result) => {
+          if (result.isConfirmed) {
+            fetch(`/users/${userId}`, {
+              method: 'DELETE',
+            })
+              .then(() => {
+                const userDeleted = document.getElementById(userId);
+                userDeleted.remove();
+              })
+              .catch((err) => {
+                // alert('Không thể xóa!!');
+                Swal.fire({
+                  title: 'Lỗi!',
+                  text: 'Không thể xóa người dùng này!',
+                  icon: 'error',
+                  confirmButtonText: 'OK',
+                });
+              });
+            Swal.fire('Đã xóa!', 'Xóa người dùng thành công', 'success');
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

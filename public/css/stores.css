@@ -1,0 +1,84 @@
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.banner {
+    background: #fb9d43;
+    width: 100%;
+    padding: 10px;
+}
+.system {
+    color: #fff;
+    background: #fb9d43;
+    padding-left: 130px;
+    margin: 10px;
+}
+.system-shop {
+    display: flex;
+    padding-left: 150px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+.system-shop1 {
+    color: #fb9d43;
+}
+.system-shop2 {
+    padding: 0 4px;
+}
+.system-list {
+    display: flex;
+    justify-content: center;
+}
+.list {
+    width: 500px;
+    height: 40px;
+}
+.content {
+    width: 80%;
+    margin: 0 10%;
+}
+div > img {
+    width: 100%;
+}
+.loaded {
+    display: flex;
+}
+.lazy-loaded {
+    width: 30%;
+    margin: 50px;
+    text-align: center;
+}
+.button-street {
+    color: #fff;
+    background: #fb9d43;
+    border-radius: 5px;
+    width: 100px;
+    height: 50px;
+    margin-top: 10px;
+}
+.STT {
+    display: flex;
+    justify-content: center;
+}
+.STTone {
+    margin: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.header-news {
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../images/img1.jpg) no-repeat center;
+    height: 300px;
+    text-transform: uppercase;
+    font-size: 36px;
+    color: #d3b673;
+    letter-spacing: 1.8px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 30px;
+}

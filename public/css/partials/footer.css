@@ -1,0 +1,68 @@
+ /* phần footer */
+ .footer{
+    margin-top:15px ;
+  }
+  /* footer bên trên */
+  .footer_edit_top_text{
+    text-align: center;
+  }
+.footer_edit_top_text h2 {
+    font-size: 28px;
+    line-height: 1.6;
+    margin: 0 0 15px;
+    font-weight: 500;
+    position: relative;
+    padding: 0 0 10px;
+    display: inline-block;
+}
+
+.footer_edit_top_text h2:before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 55px;
+  height: 1px;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 2;
+  background: #000000;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+/* phần ảnh footer */
+.footer_edit_center{
+  display: flex;
+  grid-gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.footer_edit_center_sp img{
+  width: 18rem;
+  height: 17rem;
+}
+.footer_edit_buttom{
+  width: auto;
+  display: flex;
+  grid-gap: 2rem;
+  justify-content: center;
+  align-content: center;
+}
+.footer_edit_buttom_card_1{
+  width: 18rem;
+}
+.footer_edit_buttom_card_2{
+  width: 18rem;
+}
+.footer_edit_buttom_card_2 ul li::before {
+  content: "—"; /* Ký tự gạch ngang (—) */
+  margin-right: 8px; /* Khoảng cách giữa gạch ngang và nội dung li */
+}
+.footer_edit_buttom_card_3{
+  width: 18rem;
+}
